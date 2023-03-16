@@ -4,7 +4,7 @@ pipeline {
  
  environment{
     registry = "isrealurephu/lifedelight-app"
-    registryCredentials = "dockerhub"
+    registryCredential = "dockerhub"
  }
 
  stages{

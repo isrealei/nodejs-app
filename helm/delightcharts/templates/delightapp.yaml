@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: delightapp
+  name: delightapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: delightapp
+  template:
+    metadata:
+      labels:
+        app: delightapp
+    spec:
+      containers:
+      - image: {{.Values.appimage}}
+        name: lifedelight-app 

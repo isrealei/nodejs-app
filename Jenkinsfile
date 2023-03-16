@@ -35,6 +35,14 @@ pipeline {
           }
         }
 
+    stage ("Kubernetes Deployment") {
+      agent { label  'KOPS'}
+      steps{
+      sh "helm upgrade --install --force delight-stack  helm/delightcharts --set appimage=${registry}:V${BUILD_NUMBER} --namespace prod"
+
+      }
+    }
+
 
 }
 
